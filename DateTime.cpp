@@ -40,7 +40,6 @@ DateTime& DateTime::operator=(const DateTime& dt){
 }
 bool DateTime::operator<(const DateTime&) const{
     cout << "called the < assignment operator! \n";
-<<<<<<< HEAD
 
 }
 =======
