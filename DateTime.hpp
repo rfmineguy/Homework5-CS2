@@ -2,7 +2,10 @@
 #define DATE_TIME
 
 #include <string>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e8323beab6e2f983177113bc49b01ff9858e4f2
 #include <iostream> 
 using namespace std;
 class DateTime {

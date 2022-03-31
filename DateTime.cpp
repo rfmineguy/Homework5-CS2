@@ -40,25 +40,41 @@ DateTime& DateTime::operator=(const DateTime& dt){
 }
 bool DateTime::operator<(const DateTime&) const{
     cout << "called the < assignment operator! \n";
+<<<<<<< HEAD
 
 }
+=======
+    return true;
+};
+>>>>>>> 1e8323beab6e2f983177113bc49b01ff9858e4f2
 bool DateTime::operator<=(const DateTime&) const{
     cout << "called the <= assignment operator! \n";
+    return true;
 
 }
 bool DateTime::operator>(const DateTime&) const{
     cout << "called the > assignment operator! \n";
+<<<<<<< HEAD
 
 }
+=======
+    return true;
+};
+>>>>>>> 1e8323beab6e2f983177113bc49b01ff9858e4f2
 bool DateTime::operator>=(const DateTime&) const{
     cout << "called the >= assignment operator! \n";
-
+    return true;
 };
 bool DateTime::operator==(const DateTime&) const{
     cout << "called the == assignment operator! \n";
-
+    return true;
 };
 bool DateTime::operator!=(const DateTime&) const{
     cout << "called the != assignment operator! \n";
+<<<<<<< HEAD
 
 };
+=======
+    return true;
+};
+>>>>>>> 1e8323beab6e2f983177113bc49b01ff9858e4f2
