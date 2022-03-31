@@ -2,18 +2,17 @@
 #include <iostream>
 
 Calendar::Calendar(int sz) {
-
+    
 }
-
 Calendar::Calendar(const Calendar& cal) {
 
 }
-
 Calendar::~Calendar() {
 
 }
-
-Calendar& Calendar::operator=(const Calendar&) {
+Calendar& Calendar::operator=(const Calendar& c) {
+    *this->arraySize = *c.arraySize;
+    *this->eventDynArray = *c.eventDynArray;
     return *this;
 }
 Event& Calendar::operator[](int i) {

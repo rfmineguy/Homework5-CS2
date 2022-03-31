@@ -1,6 +1,12 @@
-#pragma once
+#ifndef DATE_TIME
+#define DATE_TIME
+
 #include <string>
+<<<<<<< HEAD
+
+=======
 #include <iostream> 
+>>>>>>> 329feb74b5adb91e6be4bfd4cefc9e04c4bf8b3d
 using namespace std;
 class DateTime {
     public:
@@ -28,3 +34,5 @@ class DateTime {
         std::string* datestamp;
         std::string* timestamp;
 };
+
+#endif

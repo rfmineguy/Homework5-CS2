@@ -1,4 +1,6 @@
-#pragma once
+#ifndef CALENDAR
+#define CALENDAR
+
 #include "Event.hpp"
 
 class Calendar {
@@ -20,3 +22,5 @@ class Calendar {
         int* lastIndex;
         Event** eventDynArray;
 };
+
+#endif
