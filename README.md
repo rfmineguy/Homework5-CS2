@@ -3,10 +3,10 @@ Git repo for two CS students to work on a homework assignment
 
 
 - Hamza
-DateTime
++ DateTime
 
 - Riley
-Event
++ Event
 
 - Unallocated
-Calendar
++ Calendar
