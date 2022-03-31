@@ -35,3 +35,30 @@ std::string DateTime::CurrentDate() {
     return ctime(&epochs);
 }
 
+DateTime& DateTime::operator=(const DateTime& dt){
+    cout << "called the = assignment operator! \n";
+};
+bool DateTime::operator<(const DateTime&) const{
+    cout << "called the < assignment operator! \n";
+
+};
+bool DateTime::operator<=(const DateTime&) const{
+    cout << "called the <= assignment operator! \n";
+
+};
+bool DateTime::operator>(const DateTime&) const{
+    cout << "called the > assignment operator! \n";
+
+};
+bool DateTime::operator>=(const DateTime&) const{
+    cout << "called the >= assignment operator! \n";
+
+};
+bool DateTime::operator==(const DateTime&) const{
+    cout << "called the == assignment operator! \n";
+
+};
+bool DateTime::operator!=(const DateTime&) const{
+    cout << "called the != assignment operator! \n";
+
+};
