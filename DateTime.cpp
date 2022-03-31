@@ -37,19 +37,19 @@ std::string DateTime::CurrentDate() {
 
 DateTime& DateTime::operator=(const DateTime& dt){
     cout << "called the = assignment operator! \n";
-};
+}
 bool DateTime::operator<(const DateTime&) const{
     cout << "called the < assignment operator! \n";
 
-};
+}
 bool DateTime::operator<=(const DateTime&) const{
     cout << "called the <= assignment operator! \n";
 
-};
+}
 bool DateTime::operator>(const DateTime&) const{
     cout << "called the > assignment operator! \n";
 
-};
+}
 bool DateTime::operator>=(const DateTime&) const{
     cout << "called the >= assignment operator! \n";
 
