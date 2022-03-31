@@ -2,11 +2,11 @@
 Git repo for two CS students to work on a homework assignment
 
 
-#Hamza
+- Hamza
 DateTime
 
-#Riley
+- Riley
 Event
 
-#Unallocated
+- Unallocated
 Calendar
