@@ -1,5 +1,5 @@
 #include <string>
-
+using namespace std;
 class DateTime {
     public:
         DateTime();
