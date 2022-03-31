@@ -34,3 +34,4 @@ std::string DateTime::CurrentDate() {
     time_t epochs = time(nullptr);
     return ctime(&epochs);
 }
+
