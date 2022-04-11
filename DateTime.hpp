@@ -8,7 +8,7 @@ using namespace std;
 class DateTime {
     public:
         DateTime();
-        DateTime(const std::string& d, const std::string& t);
+        DateTime(const std::string d, const std::string t);
         DateTime(const DateTime& dt);
         ~DateTime();
 

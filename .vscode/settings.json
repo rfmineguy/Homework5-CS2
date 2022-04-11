@@ -3,6 +3,8 @@
         "*.tcc": "cpp",
         "memory_resource": "cpp",
         "type_traits": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "string": "cpp",
+        "iosfwd": "cpp"
     }
 }

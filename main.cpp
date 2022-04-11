@@ -23,6 +23,7 @@ void branch(unsigned, Calendar*);
 *******************************************************************************/
 int main() {
     // variables
+    // DateTime test = DateTime(); testing if underlined constructor is working
     unsigned userChoice = 0;
     const unsigned EXIT_CHOICE = 5;
     Calendar cal;

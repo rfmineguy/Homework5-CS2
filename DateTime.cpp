@@ -4,8 +4,9 @@
 DateTime::DateTime()
 :DateTime(CurrentDate(), CurrentTime()) {}
 
-DateTime::DateTime(const std::string& d, const std::string& t) 
+DateTime::DateTime(const std::string d, const std::string t) 
 :datestamp(new std::string(d)), timestamp(new std::string(t)) {}
+
 
 DateTime::DateTime(const DateTime& dt)
 :datestamp(new std::string(*dt.datestamp)), timestamp(new std::string(*dt.timestamp)) {}
