@@ -27,7 +27,9 @@ std::string DateTime::GetTime() const {
 
 std::string DateTime::CurrentTime() {
     time_t epochs = time(nullptr);
-    return ctime(&epochs);
+    std::string timeStr = ctime(&epochs);
+
+    return timeStr.substr(11, 8);// + timeStr.substr()
 }
 
 std::string DateTime::CurrentDate() {
