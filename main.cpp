@@ -24,8 +24,10 @@ void branch(unsigned, Calendar*);
 int main() {
     // variables
     DateTime test = DateTime(); //testing if underlined constructor is working
-    cout << test.getDate().substr(4,3)<< endl;
-    cout << test.getTime() << endl;
+    DateTime test2 = DateTime(); //testing if comparison operator is working
+    cout << (test>=test2) << endl; 
+    // cout << test.getDate().substr(4,3)<< endl;
+    // cout << test.getTime() << endl;
 
     unsigned userChoice = 0;
     const unsigned EXIT_CHOICE = 5;
