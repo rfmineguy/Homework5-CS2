@@ -10,13 +10,14 @@ class Event {
         ~Event();
 
         Event& operator=(const Event& e);
-        friend std::ostream& operator<<(const std::ostream& os, const Event& e);
+        friend std::ostream& operator<<(std::ostream& os, const Event& e);
 
         std::string GetDescription() const;
         DateTime GetDateTime() const;
 
-        void SetDescription(std::string _desc);
-        void SetDateTime(DateTime _dt);
+        void SetDescription(const std::string& _desc);
+        void SetDateTime(const DateTime& _dt);
+
     private:
         std::string* description;
         DateTime* dtInfo;

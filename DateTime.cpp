@@ -32,35 +32,28 @@ std::string DateTime::CurrentTime() {
 
 std::string DateTime::CurrentDate() {
     time_t epochs = time(nullptr);
-    return ctime(&epochs);
+    std::string timeStr = ctime(&epochs);
+    return timeStr.substr(0, 10) + timeStr.substr(19, 5);
 }
 
 DateTime& DateTime::operator=(const DateTime& dt){
     cout << "called the = assignment operator! \n";
+
+    return *this;
 }
 bool DateTime::operator<(const DateTime&) const{
     cout << "called the < assignment operator! \n";
-<<<<<<< HEAD
 
-}
-=======
     return true;
 };
->>>>>>> 1e8323beab6e2f983177113bc49b01ff9858e4f2
 bool DateTime::operator<=(const DateTime&) const{
     cout << "called the <= assignment operator! \n";
     return true;
-
 }
 bool DateTime::operator>(const DateTime&) const{
     cout << "called the > assignment operator! \n";
-<<<<<<< HEAD
-
-}
-=======
     return true;
-};
->>>>>>> 1e8323beab6e2f983177113bc49b01ff9858e4f2
+}
 bool DateTime::operator>=(const DateTime&) const{
     cout << "called the >= assignment operator! \n";
     return true;
@@ -71,10 +64,5 @@ bool DateTime::operator==(const DateTime&) const{
 };
 bool DateTime::operator!=(const DateTime&) const{
     cout << "called the != assignment operator! \n";
-<<<<<<< HEAD
-
-};
-=======
     return true;
 };
->>>>>>> 1e8323beab6e2f983177113bc49b01ff9858e4f2
