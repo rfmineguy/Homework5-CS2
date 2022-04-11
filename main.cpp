@@ -23,7 +23,10 @@ void branch(unsigned, Calendar*);
 *******************************************************************************/
 int main() {
     // variables
-    // DateTime test = DateTime(); testing if underlined constructor is working
+    DateTime test = DateTime(); //testing if underlined constructor is working
+    cout << test.getDate().substr(4,3)<< endl;
+    cout << test.getTime() << endl;
+
     unsigned userChoice = 0;
     const unsigned EXIT_CHOICE = 5;
     Calendar cal;
@@ -124,8 +127,8 @@ void branch(unsigned userChoice, Calendar* calPtr) {
 
         // display current date and time
         case 4: {
-            cout << "Current date: " << DateTime::CurrentDate() << endl;
-            cout << "Current time: " << DateTime::CurrentTime() << endl;
+            cout << "Current date: " << DateTime::currentDate() << endl;
+            cout << "Current time: " << DateTime::currentTime() << endl;
             break;
         }
 

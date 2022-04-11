@@ -21,11 +21,11 @@ class DateTime {
         bool operator!=(const DateTime&) const;
         friend std::ostream& operator<<(const std::ostream&, const DateTime&);
 
-        std::string GetDateTime() const;            //impl
-        std::string GetTime() const;                //impl
+        std::string getDate() const;            //impl
+        std::string getTime() const;                //impl
         
-        static std::string CurrentDate();           //impl
-        static std::string CurrentTime();           //impl
+        static std::string currentDate();           //impl
+        static std::string currentTime();           //impl
 
     private:
         std::string* datestamp;
