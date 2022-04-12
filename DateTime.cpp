@@ -41,16 +41,137 @@ std::string DateTime::currentDate() {
 
 DateTime& DateTime::operator=(const DateTime& other){
     cout << "called the = assignment operator! \n";
+    *(this->datestamp) = *(other.datestamp);
+    *(this->timestamp) = *(other.timestamp);
 
-    return *this;
+    return *this; //or this
 }
 bool DateTime::operator<(const DateTime& other) const{
     cout << "called the < assignment operator! \n";
+    string months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    int this_year = stoi( (*(this->datestamp)).substr(11,4) );
+    string this_month_str = ( (*(this->datestamp)).substr(4,3) );
+    int this_month;
+    for(int i = 0; i <12; i++){
+        if(months[i]==this_month_str){
+            this_month = i+1;
+            break;
+        }
+    }
+    int this_date = stoi( (*(this->datestamp)).substr(8,2) );
+//----------------------------------------------------------------
+    int other_year = stoi( (*(other.datestamp)).substr(11,4) );
+    string other_month_str = ( (*(other.datestamp)).substr(4,3) );
+    int other_month;
+    for(int i = 0; i <12; i++){
+        if(months[i]==other_month_str){
+            other_month = i+1;
+            break;
+        }
+    }
+    int other_date = stoi( (*(other.datestamp)).substr(8,2) );
+//----------------------------------------------------------------
+    int this_hour = stoi( (*(this->timestamp)).substr(0,2) );
+    int this_minute = stoi( (*(this->timestamp)).substr(3,2) );
+    int this_sec = stoi( (*(this->timestamp)).substr(6,2) );
+//----------------------------------------------------------------
+    int other_hour = stoi( (*(other.timestamp)).substr(0,2) );
+    int other_minute = stoi( (*(other.timestamp)).substr(3,2) );
+    int other_sec = stoi( (*(other.timestamp)).substr(6,2) );
+//----------------------------------------------------------------
+    if(this_year == other_year){
+        if(this_month == other_month){
+            if(this_date == other_date){
+                if(this_hour == other_hour){
+                    if(this_minute == other_minute){
+                        if(this_sec < other_sec){
+                            return true;
+                        }
+                    }
+                    else if(this_minute < other_minute){
+                        return true;
+                    }
+                }
+                else if(this_hour < other_hour){
+                    return true;
+                }
+            }
+            else if(this_date < other_date){
+                return true;
+            }
+        }
+        else if(this_month < other_month){
+            return true;
+        }
+    }
+    else if(this_year < other_year){
+        return true;
+    }
 
     return false;
 };
 bool DateTime::operator<=(const DateTime& other) const{
     cout << "called the <= assignment operator! \n";
+    string months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    int this_year = stoi( (*(this->datestamp)).substr(11,4) );
+    string this_month_str = ( (*(this->datestamp)).substr(4,3) );
+    int this_month;
+    for(int i = 0; i <12; i++){
+        if(months[i]==this_month_str){
+            this_month = i+1;
+            break;
+        }
+    }
+    int this_date = stoi( (*(this->datestamp)).substr(8,2) );
+//----------------------------------------------------------------
+    int other_year = stoi( (*(other.datestamp)).substr(11,4) );
+    string other_month_str = ( (*(other.datestamp)).substr(4,3) );
+    int other_month;
+    for(int i = 0; i <12; i++){
+        if(months[i]==other_month_str){
+            other_month = i+1;
+            break;
+        }
+    }
+    int other_date = stoi( (*(other.datestamp)).substr(8,2) );
+//----------------------------------------------------------------
+    int this_hour = stoi( (*(this->timestamp)).substr(0,2) );
+    int this_minute = stoi( (*(this->timestamp)).substr(3,2) );
+    int this_sec = stoi( (*(this->timestamp)).substr(6,2) );
+//----------------------------------------------------------------
+    int other_hour = stoi( (*(other.timestamp)).substr(0,2) );
+    int other_minute = stoi( (*(other.timestamp)).substr(3,2) );
+    int other_sec = stoi( (*(other.timestamp)).substr(6,2) );
+//----------------------------------------------------------------
+    if(this_year == other_year){
+        if(this_month == other_month){
+            if(this_date == other_date){
+                if(this_hour == other_hour){
+                    if(this_minute == other_minute){
+                        if(this_sec <= other_sec){
+                            return true;
+                        }
+                    }
+                    else if(this_minute < other_minute){
+                        return true;
+                    }
+                }
+                else if(this_hour < other_hour){
+                    return true;
+                }
+            }
+            else if(this_date < other_date){
+                return true;
+            }
+        }
+        else if(this_month < other_month){
+            return true;
+        }
+    }
+    else if(this_year < other_year){
+        return true;
+    }
+
     return false;
 }
 bool DateTime::operator>(const DateTime& other) const{
@@ -97,7 +218,7 @@ bool DateTime::operator>(const DateTime& other) const{
                         }
                     }
                     else if(this_minute > other_minute){
-                    return true;
+                        return true;
                     }
                 }
                 else if(this_hour > other_hour){
@@ -163,7 +284,7 @@ bool DateTime::operator>=(const DateTime& other) const{
                         }
                     }
                     else if(this_minute > other_minute){
-                    return true;
+                        return true;
                     }
                 }
                 else if(this_hour > other_hour){

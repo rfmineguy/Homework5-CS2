@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <iostream>
 
-#include <chrono>
+#include <chrono> //testing if = assignment operator works with a pause
 #include <thread>
 using namespace std;
 
@@ -27,8 +27,12 @@ void branch(unsigned, Calendar*);
 int main() {
     // variables
     DateTime test = DateTime(); //testing if underlined constructor is working
+    cout << test.getTime() << endl; 
+    std::chrono::seconds dura( 5);
+    std::this_thread::sleep_for( dura );
     DateTime test2 = DateTime(); //testing if comparison operator is working
-    cout << (test>test2) << endl; 
+    test = test2;
+    cout << test.getTime() << endl; 
     // cout << test.getDate().substr(4,3)<< endl;
     // cout << test.getTime() << endl;
 
