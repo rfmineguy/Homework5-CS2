@@ -2,6 +2,9 @@
 #include "Calendar.hpp"
 #include <iomanip>
 #include <iostream>
+
+#include <chrono>
+#include <thread>
 using namespace std;
 
 /*******************************************************************************
@@ -25,7 +28,7 @@ int main() {
     // variables
     DateTime test = DateTime(); //testing if underlined constructor is working
     DateTime test2 = DateTime(); //testing if comparison operator is working
-    cout << (test>=test2) << endl; 
+    cout << (test>test2) << endl; 
     // cout << test.getDate().substr(4,3)<< endl;
     // cout << test.getTime() << endl;
 
