@@ -1,13 +1,15 @@
 #include "Event.hpp"
 
 Event::Event()
-    :description(new std::string("")), dtInfo(new DateTime()){}
+    :Event("") {}//description(new std::string("")), dtInfo(new DateTime()){}
 
 Event::Event(std::string desc) 
-    :description(new std::string(desc)), dtInfo(new DateTime()){}
+    :Event(desc, DateTime()) {}//description(new std::string(desc)), dtInfo(new DateTime()) {}
 
 Event::Event(std::string desc, DateTime dt)
-    :description(new std::string(desc)), dtInfo(new DateTime(dt)) {}
+    :description(new std::string(desc)), dtInfo(new DateTime(dt)) {
+        std::cout << "Event constructed" << std::endl;
+    }
 
 Event::Event(const Event& e) 
     :description(new std::string(*e.description)), dtInfo(new DateTime(*e.dtInfo)) {}
@@ -30,6 +32,7 @@ Event::~Event() {
     description = nullptr;
     delete dtInfo;
     dtInfo = nullptr;
+    std::cout << "Event destructed" << std::endl;
 }
 
 std::string Event::GetDescription() const {
@@ -41,7 +44,9 @@ DateTime Event::GetDateTime() const {
 }
 
 void Event::SetDescription(const std::string& _desc) {
-    *description = _desc;
+    std::cout << "Setting description" << std::endl;
+    *description = _desc;                           //issue Event.cpp#45
+    std::cout << "Set description" << std::endl;
 }
 
 void Event::SetDateTime(const DateTime& _dt) {

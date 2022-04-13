@@ -27,8 +27,9 @@ void branch(unsigned, Calendar*);
 int main() {
     // variables
     DateTime test = DateTime(); //testing if underlined constructor is working
-    cout << test.getTime() << endl; 
-    std::chrono::seconds dura( 5);
+    cout << test.getTime() << endl;
+    std::cout << "Waiting 1 seconds" << std::endl;
+    std::chrono::seconds dura( 1);
     std::this_thread::sleep_for( dura );
     DateTime test2 = DateTime(); //testing if comparison operator is working
     test = test2;
