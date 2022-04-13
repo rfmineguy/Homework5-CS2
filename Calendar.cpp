@@ -115,7 +115,7 @@ void Calendar::removeEvent() {
         std::cin.ignore();
     } while (removeIndex < 0 || removeIndex >= *lastIndex); //should this be > *lastIndex?
     
-    delete eventDynArray[removeIndex];
+    //delete eventDynArray[removeIndex];
     for (int i = removeIndex + 1; i < *lastIndex; i++) {
         eventDynArray[i-1] = eventDynArray[i];
     }
