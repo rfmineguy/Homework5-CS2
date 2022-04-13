@@ -19,7 +19,7 @@ class DateTime {
         bool operator>=(const DateTime&) const;
         bool operator==(const DateTime&) const;
         bool operator!=(const DateTime&) const;
-        friend std::ostream& operator<<(const std::ostream&, const DateTime&);
+        friend std::ostream& operator<<(std::ostream&, const DateTime&);
 
         std::string getDate() const;            //impl
         std::string getTime() const;                //impl

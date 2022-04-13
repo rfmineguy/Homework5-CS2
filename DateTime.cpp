@@ -324,3 +324,8 @@ bool DateTime::operator!=(const DateTime& other) const{
     }
     return true;
 };
+
+std::ostream& operator<<(std::ostream& os, const DateTime& dt) {
+    os << "DateTime ostream WIP\n";
+    return os;
+}
