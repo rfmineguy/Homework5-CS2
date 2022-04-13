@@ -44,7 +44,7 @@ std::ostream& operator<<(std::ostream& os, const Calendar& c) {
     os << "Calendar contains " << *c.lastIndex << " events.\n";
     os << "--------------------------------------------------\n";
     for (int i = 0; i < *c.lastIndex; i++) {
-        os << "Event #" << i << "\n";
+        os << "Event #" << i+1 << "\n";
         os << "Describption : \n";
         os << "\t" << c.eventDynArray[i]->GetDescription() << "\n";
         os << "Date and Time info : \n";
