@@ -13,11 +13,11 @@ Calendar::Calendar(const Calendar& cal) {
     
 }
 Calendar::~Calendar() {
-    std::cout << "Calendar destructor" << std::endl;
+    // std::cout << "Calendar destructor" << std::endl;
     //delete the dynamic objects in the array
     for (int i = 0; i < *arraySize; i++) {
         if (eventDynArray[i]) {
-            std::cout << "Deleting event" << std::endl;
+            // std::cout << "Deleting event" << std::endl;
             delete eventDynArray[i];
         }
         eventDynArray[i] = nullptr;
@@ -54,7 +54,7 @@ std::ostream& operator<<(std::ostream& os, const Calendar& c) {
     return os;
 }
 void Calendar::addEvent() {
-    std::cout << "Last Index = " << *lastIndex << std::endl;
+    // std::cout << "Last Index = " << *lastIndex << std::endl;
     if (*lastIndex >= *arraySize) {
         std::cout << "Not enough space in the calendar for a new event" << std::endl;
         return;
@@ -103,7 +103,7 @@ void Calendar::addEvent() {
     (*lastIndex)++;
 }
 void Calendar::removeEvent() {
-    std::cout << "Last Index = " << *lastIndex << std::endl;
+    // std::cout << "Last Index = " << *lastIndex << std::endl;
     if (*lastIndex < 0) {
         std::cerr << "No events in the calendar. You can't remove anything.\n";
         return;

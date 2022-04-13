@@ -8,7 +8,7 @@ Event::Event(std::string desc)
 
 Event::Event(std::string desc, DateTime dt)
     :description(new std::string(desc)), dtInfo(new DateTime(dt)) {
-        std::cout << "Event constructed" << std::endl;
+        // std::cout << "Event constructed" << std::endl;
     }
 
 Event::Event(const Event& e) 
@@ -32,7 +32,7 @@ Event::~Event() {
     description = nullptr;
     delete dtInfo;
     dtInfo = nullptr;
-    std::cout << "Event destructed" << std::endl;
+    // std::cout << "Event destructed" << std::endl;
 }
 
 std::string Event::GetDescription() const {
