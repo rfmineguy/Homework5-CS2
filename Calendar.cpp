@@ -51,7 +51,7 @@ std::ostream& operator<<(std::ostream& os, const Calendar& c) {
     os << "--------------------------------------------------\n";
     for (int i = 0; i < *c.lastIndex; i++) {
         os << "Event #" << i+1 << "\n";
-        os << "Describption : \n";
+        os << "Description : \n";
         os << "\t" << c.eventDynArray[i]->GetDescription() << "\n";
         os << "Date and Time info : \n";
         os << "\t" << c.eventDynArray[i]->GetDateTime() << "\n";
