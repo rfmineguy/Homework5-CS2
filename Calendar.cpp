@@ -96,8 +96,10 @@ void Calendar::addEvent() {
                 std::cout << "Please enter a time for your new event(10:21:13) format: ";
                 std::getline(std::cin, timeStr);
 
-                eventDynArray[*lastIndex]->SetDescription(eventDescriptionStr);
-                eventDynArray[*lastIndex]->SetDateTime(DateTime(dateStr, timeStr));
+                if (eventDynArray[*lastIndex]) {
+                    eventDynArray[*lastIndex]->SetDescription(eventDescriptionStr);
+                    eventDynArray[*lastIndex]->SetDateTime(DateTime(dateStr, timeStr));
+                }
                 break;
             }
     case 2: {
@@ -107,20 +109,43 @@ void Calendar::addEvent() {
                 std::cout << "Using current time and date\n";
                 
                 std::cout << *lastIndex << std::endl;
-                eventDynArray[*lastIndex]->SetDescription(eventDescriptionStr);
-                // eventDynArray[*lastIndex]->SetDateTime(DateTime::currentDate());
+                if (eventDynArray[*lastIndex]) {
+                    std::cout << "Event not nullptr" << std::endl;
+                    eventDynArray[*lastIndex]->SetDescription(eventDescriptionStr);
+                    //eventDynArray[*lastIndex]->SetDateTime(DateTime(DateTime::currentDate(), DateTime::currentTime()));
+                }
                 std::cout << "passed setDescription\n";
                 break;
             }
     }
     (*lastIndex)++;
-        cout << "we got here2" << std::endl;
+    cout << "we got here2" << std::endl;
 
     sort(eventDynArray, eventDynArray + *lastIndex + 1, [](Event* a, Event* b) {return a->GetDateTime() < b->GetDateTime(); });
             cout << "we got here3" << std::endl;
 
 }
 void Calendar::removeEvent() {
+   
+    int userInt;
+    if (*lastIndex == -1) {
+        std::cout << "No events in the calendar" << std::endl;
+        return;
+    }
+    do {
+        std::cout << "Enter the index of the event you'd like to remove : ";
+        std::cin >> userInt;
+        std::cin.clear();
+        std::cin.ignore();
+    } while(userInt < 0 || userInt >= *lastIndex);
+
+    delete eventDynArray[userInt];
+    for (int i = userInt; i < *arraySize; i++) {
+        eventDynArray[i] = eventDynArray[i+1];
+    }
+    (*lastIndex)--;
+
+    /*
     std::cout << "Last Index = " << *lastIndex << std::endl;
     if (*lastIndex < 0) {
         std::cerr << "No events in the calendar. You can't remove anything.\n";
@@ -133,15 +158,19 @@ void Calendar::removeEvent() {
         std::cin.ignore();
     } while (removeIndex < 0 || removeIndex >= *lastIndex); //should this be > *lastIndex?
     
-    //delete eventDynArray[removeIndex];
-    for (int i = removeIndex + 1; i < *lastIndex; i++) {
-        eventDynArray[i-1] = eventDynArray[i];
+    delete eventDynArray[removeIndex];
+    eventDynArray[removeIndex] = new Event("", DateTime());
+    Event* temp = eventDynArray[removeIndex];
+    for (int i = removeIndex; i < *lastIndex; i++) {
+        eventDynArray[i] = eventDynArray[i+1];
     }
+    eventDynArray[*lastIndex - 1] = temp;
     // delete eventDynArray[*lastIndex];
-    eventDynArray[*lastIndex] = nullptr;
-    DateTime dt_last = DateTime("Wed 12/29/9999", "23:59:59");
-    eventDynArray[*lastIndex] = new Event("oblivion", dt_last);
+    //eventDynArray[*lastIndex] = nullptr;
+    //DateTime dt_last = DateTime("Wed 12/29/9999", "23:59:59");
+    //eventDynArray[*lastIndex] = new Event("oblivion", dt_last);
     (*lastIndex)--;
     if (*lastIndex == 0)
         *lastIndex = -1;
+    */
 }

@@ -40,16 +40,19 @@ std::string Event::GetDescription() const {
 }
 
 DateTime Event::GetDateTime() const {
-    cout << "get date time1" << std::endl;
-
     return *dtInfo;
 
 }
 
 void Event::SetDescription(const std::string& _desc) {
     std::cout << "Setting description" << std::endl;
-    *description = _desc;                           //issue Event.cpp#45
-    std::cout << "Set description" << std::endl;
+    if (description) {
+        *description = _desc;                           //issue Event.cpp#45
+        std::cout << "Set description" << std::endl;
+    }
+    else {
+        std::cout << "description is nullptr" << std::endl;
+    }
 }
 
 void Event::SetDateTime(const DateTime& _dt) {
