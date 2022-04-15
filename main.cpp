@@ -34,7 +34,7 @@ int main() {
     DateTime test2 = DateTime(); //testing if comparison operator is working
     test = test2;
     cout << test.getTime() << endl; 
-    // cout << test.getDate().substr(4,3)<< endl;
+    // cout << test.getDate().substr(4,3) << endl;
     // cout << test.getTime() << endl;
 
     unsigned userChoice = 0;

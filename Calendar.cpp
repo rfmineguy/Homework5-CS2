@@ -101,6 +101,7 @@ void Calendar::addEvent() {
             }
     }
     (*lastIndex)++;
+    sort(eventDynArray, eventDynArray + *lastIndex + 1, [](Event* a, Event* b) {return a->GetDateTime() < b->GetDateTime(); });
 }
 void Calendar::removeEvent() {
     // std::cout << "Last Index = " << *lastIndex << std::endl;
