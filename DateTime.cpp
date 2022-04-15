@@ -333,6 +333,9 @@ bool DateTime::operator!=(const DateTime& other) const{
 };
 
 std::ostream& operator<<(std::ostream& os, const DateTime& dt) {
-    os << "DateTime ostream WIP\n";
+    // should look like Wed 03/23/2022 11:00:00
+    // os << "DateTime ostream WIP\n";
+    os << *(dt.datestamp) << " " << *(dt.timestamp) << endl;
+
     return os;
 }

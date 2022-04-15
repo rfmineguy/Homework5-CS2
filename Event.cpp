@@ -40,7 +40,10 @@ std::string Event::GetDescription() const {
 }
 
 DateTime Event::GetDateTime() const {
+    cout << "get date time1" << std::endl;
+
     return *dtInfo;
+
 }
 
 void Event::SetDescription(const std::string& _desc) {
@@ -50,5 +53,8 @@ void Event::SetDescription(const std::string& _desc) {
 }
 
 void Event::SetDateTime(const DateTime& _dt) {
+    cout << "set date time1" << std::endl;
     *dtInfo = _dt;
+        cout << "set date time2" << std::endl;
+
 }

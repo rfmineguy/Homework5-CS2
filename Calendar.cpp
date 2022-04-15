@@ -1,4 +1,6 @@
 #include "Calendar.hpp"
+#include "DateTime.hpp"
+
 #include <iostream>
 #include <algorithm>
 
@@ -106,7 +108,7 @@ void Calendar::addEvent() {
                 
                 std::cout << *lastIndex << std::endl;
                 eventDynArray[*lastIndex]->SetDescription(eventDescriptionStr);
-                //eventDynArray[*lastIndex]->SetDateTime(DateTime::currentDate());
+                // eventDynArray[*lastIndex]->SetDateTime(DateTime::currentDate());
                 std::cout << "passed setDescription\n";
                 break;
             }
@@ -114,12 +116,12 @@ void Calendar::addEvent() {
     (*lastIndex)++;
         cout << "we got here2" << std::endl;
 
-    // sort(eventDynArray, eventDynArray + *lastIndex + 1, [](Event* a, Event* b) {return a->GetDateTime() < b->GetDateTime(); });
+    sort(eventDynArray, eventDynArray + *lastIndex + 1, [](Event* a, Event* b) {return a->GetDateTime() < b->GetDateTime(); });
             cout << "we got here3" << std::endl;
 
 }
 void Calendar::removeEvent() {
-    // std::cout << "Last Index = " << *lastIndex << std::endl;
+    std::cout << "Last Index = " << *lastIndex << std::endl;
     if (*lastIndex < 0) {
         std::cerr << "No events in the calendar. You can't remove anything.\n";
         return;
@@ -135,7 +137,10 @@ void Calendar::removeEvent() {
     for (int i = removeIndex + 1; i < *lastIndex; i++) {
         eventDynArray[i-1] = eventDynArray[i];
     }
+    // delete eventDynArray[*lastIndex];
     eventDynArray[*lastIndex] = nullptr;
+    DateTime dt_last = DateTime("Wed 12/29/9999", "23:59:59");
+    eventDynArray[*lastIndex] = new Event("oblivion", dt_last);
     (*lastIndex)--;
     if (*lastIndex == 0)
         *lastIndex = -1;
