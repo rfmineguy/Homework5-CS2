@@ -87,7 +87,7 @@ void Calendar::addEvent() {
                 std::string eventDescriptionStr, dateStr, timeStr;
                 std::cout << "Please enter a description for your new event : ";
                 std::getline(std::cin, eventDescriptionStr);
-                std::cout << "Please enter a date for your new event : ";
+                std::cout << "Please enter a date for your new event(Wed 01/21/2001) format : ";
                 std::getline(std::cin, dateStr);
                 std::cout << "Please enter a time for your new event : ";
                 std::getline(std::cin, timeStr);

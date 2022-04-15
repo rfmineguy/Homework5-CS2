@@ -58,14 +58,14 @@ bool DateTime::operator<(const DateTime& other) const{
             break;
         }
     }
-        cout << "we got here1" << endl;
 
     int this_date = stoi( (*(this->datestamp)).substr(8,2) );
-        cout << "we got here2" << endl;
 
 //----------------------------------------------------------------
     int other_year = stoi( (*(other.datestamp)).substr(11,4) );
+
     string other_month_str = ( (*(other.datestamp)).substr(4,3) );
+
     int other_month;
     for(int i = 0; i <12; i++){
         if(months[i]==other_month_str){
@@ -73,23 +73,19 @@ bool DateTime::operator<(const DateTime& other) const{
             break;
         }
     }
-        cout << "we got here3" << endl;
 
     int other_date = stoi( (*(other.datestamp)).substr(8,2) );
-        cout << "we got here4" << endl;
 
 //----------------------------------------------------------------
     int this_hour = stoi( (*(this->timestamp)).substr(0,2) );
     int this_minute = stoi( (*(this->timestamp)).substr(3,2) );
     int this_sec = stoi( (*(this->timestamp)).substr(6,2) );
-        cout << "we got here5" << endl;
 
 //----------------------------------------------------------------
     int other_hour = stoi( (*(other.timestamp)).substr(0,2) );
     int other_minute = stoi( (*(other.timestamp)).substr(3,2) );
     int other_sec = stoi( (*(other.timestamp)).substr(6,2) );
 //----------------------------------------------------------------
-    cout << "we got here6" << endl;
     if(this_year == other_year){
         if(this_month == other_month){
             if(this_date == other_date){
