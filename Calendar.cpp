@@ -1,5 +1,6 @@
 #include "Calendar.hpp"
 #include <iostream>
+#include <algorithm>
 
 Calendar::Calendar(int sz)
 :arraySize(new int(sz)), lastIndex(new int(-1))  {
@@ -78,13 +79,16 @@ void Calendar::addEvent() {
     }
     switch (userChoice) {
     case 1: {
-                std::string eventDescriptionStr, dateTimeStr;
+                std::string eventDescriptionStr, dateStr, timeStr;
                 std::cout << "Please enter a description for your new event : ";
                 std::getline(std::cin, eventDescriptionStr);
-                std::cout << "Please enter a date and time for your new event : ";
-                std::getline(std::cin, dateTimeStr);
+                std::cout << "Please enter a date for your new event : ";
+                std::getline(std::cin, dateStr);
+                std::cout << "Please enter a time for your new event : ";
+                std::getline(std::cin, timeStr);
 
                 eventDynArray[*lastIndex]->SetDescription(eventDescriptionStr);
+                eventDynArray[*lastIndex]->SetDateTime(DateTime(dateStr, timeStr));
                 break;
             }
     case 2: {
