@@ -42,7 +42,12 @@ Event& Calendar::operator[](int i) const {
     return *eventDynArray[i];
 }
 std::ostream& operator<<(std::ostream& os, const Calendar& c) {
-    os << "Calendar contains " << *c.lastIndex << " events.\n";
+    if(*c.lastIndex==-1){
+        os << "Calendar contains 0 events.\n";
+    }
+    else{
+        os << "Calendar contains " << *c.lastIndex << " events.\n";
+    }
     os << "--------------------------------------------------\n";
     for (int i = 0; i < *c.lastIndex; i++) {
         os << "Event #" << i+1 << "\n";
