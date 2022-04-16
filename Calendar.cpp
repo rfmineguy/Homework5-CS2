@@ -67,7 +67,6 @@ void Calendar::addEvent() {
         std::cout << "Not enough space in the calendar for a new event" << std::endl;
         return;
     }
-    cout << "we got here" << std::endl;
     
     int userChoice = -1;
     do {
@@ -81,7 +80,6 @@ void Calendar::addEvent() {
             userChoice = userChoiceC - '0';
     } while(userChoice == -1 || userChoice <= 0 || userChoice > 2);
     
-        cout << "we got here1" << std::endl;
 
     if (*lastIndex < 0) {
         *lastIndex = 0;
@@ -108,21 +106,19 @@ void Calendar::addEvent() {
                 std::getline(std::cin, eventDescriptionStr);
                 std::cout << "Using current time and date\n";
                 
-                std::cout << *lastIndex << std::endl;
+                // std::cout << *lastIndex << std::endl;
                 if (eventDynArray[*lastIndex]) {
-                    std::cout << "Event not nullptr" << std::endl;
+                    // std::cout << "Event not nullptr" << std::endl;
                     eventDynArray[*lastIndex]->SetDescription(eventDescriptionStr);
                     //eventDynArray[*lastIndex]->SetDateTime(DateTime(DateTime::currentDate(), DateTime::currentTime()));
                 }
-                std::cout << "passed setDescription\n";
+                // std::cout << "passed setDescription\n";
                 break;
             }
     }
     (*lastIndex)++;
-    cout << "we got here2" << std::endl;
 
     sort(eventDynArray, eventDynArray + *lastIndex + 1, [](Event* a, Event* b) {return a->GetDateTime() < b->GetDateTime(); });
-            cout << "we got here3" << std::endl;
 
 }
 void Calendar::removeEvent() {

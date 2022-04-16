@@ -45,7 +45,7 @@ DateTime Event::GetDateTime() const {
 }
 
 void Event::SetDescription(const std::string& _desc) {
-    std::cout << "Setting description" << std::endl;
+    // std::cout << "Setting description" << std::endl;
     if (description) {
         *description = _desc;                           //issue Event.cpp#45
         std::cout << "Set description" << std::endl;
@@ -56,8 +56,6 @@ void Event::SetDescription(const std::string& _desc) {
 }
 
 void Event::SetDateTime(const DateTime& _dt) {
-    cout << "set date time1" << std::endl;
     *dtInfo = _dt;
-        cout << "set date time2" << std::endl;
 
 }

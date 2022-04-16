@@ -40,14 +40,14 @@ std::string DateTime::currentDate() {
 }
 
 DateTime& DateTime::operator=(const DateTime& other){
-    cout << "called the = assignment operator! \n";
+    // cout << "called the = assignment operator! \n";
     *(this->datestamp) = *(other.datestamp);
     *(this->timestamp) = *(other.timestamp);
 
     return *this; //or this
 }
 bool DateTime::operator<(const DateTime& other) const{
-    cout << "called the < assignment operator! \n";
+    // cout << "called the < assignment operator! \n";
     string months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     int this_year = stoi( (*(this->datestamp)).substr(11,4) );
     string this_month_str = ( (*(this->datestamp)).substr(4,3) );
@@ -118,7 +118,7 @@ bool DateTime::operator<(const DateTime& other) const{
     return false;
 };
 bool DateTime::operator<=(const DateTime& other) const{
-    cout << "called the <= assignment operator! \n";
+    // cout << "called the <= assignment operator! \n";
     string months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     int this_year = stoi( (*(this->datestamp)).substr(11,4) );
     string this_month_str = ( (*(this->datestamp)).substr(4,3) );
@@ -182,7 +182,7 @@ bool DateTime::operator<=(const DateTime& other) const{
     return false;
 }
 bool DateTime::operator>(const DateTime& other) const{
-    cout << "called the > assignment operator! \n";
+    // cout << "called the > assignment operator! \n";
     string months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     int this_year = stoi( (*(this->datestamp)).substr(11,4) );
     string this_month_str = ( (*(this->datestamp)).substr(4,3) );
@@ -248,7 +248,7 @@ bool DateTime::operator>(const DateTime& other) const{
 
 }
 bool DateTime::operator>=(const DateTime& other) const{
-    cout << "called the >= assignment operator! \n";
+    // cout << "called the >= assignment operator! \n";
     string months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     int this_year = stoi( (*(this->datestamp)).substr(11,4) );
     string this_month_str = ( (*(this->datestamp)).substr(4,3) );
@@ -314,7 +314,7 @@ bool DateTime::operator>=(const DateTime& other) const{
 
 };
 bool DateTime::operator==(const DateTime& other) const{
-    cout << "called the == assignment operator! \n";
+    // cout << "called the == assignment operator! \n";
     if(*(this->datestamp) == *(other.datestamp)){
         if(*(this->timestamp) == *(other.timestamp)){
             return true;
@@ -323,7 +323,7 @@ bool DateTime::operator==(const DateTime& other) const{
     return false;
 };
 bool DateTime::operator!=(const DateTime& other) const{
-    cout << "called the != assignment operator! \n";
+    // cout << "called the != assignment operator! \n";
     if(*(this->datestamp) == *(other.datestamp)){
         if(*(this->timestamp) == *(other.timestamp)){
             return false;
